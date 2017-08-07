@@ -11,7 +11,9 @@ fun main(args: Array<String>) {
     with (JFrame("Product popularity")) {
         setSize(600, 600)
         defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        add(JScrollPane(JLabel(renderProductTable(), CENTER)))
+        val renderProductTable = renderProductTable()
+        System.out.println(renderProductTable)
+        add(JScrollPane(JLabel(renderProductTable, CENTER)))
         isVisible = true
     }
 }

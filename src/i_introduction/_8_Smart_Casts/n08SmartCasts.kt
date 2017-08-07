@@ -11,9 +11,21 @@ class Sum(val left: Expr, val right: Expr) : Expr()
 
 fun eval(e: Expr): Int =
         when (e) {
-            is Num -> todoTask8(e)
-            is Sum -> todoTask8(e)
+            is Num -> e.value
+            is Sum -> eval(e.left) + eval(e.right)
         }
+
+/**
+ *
+if (expr instanceof Num) {
+return ((Num) expr).getValue();
+}
+if (expr instanceof Sum) {
+Sum sum = (Sum) expr;
+return eval(sum.getLeft()) + eval(sum.getRight());
+}
+throw new IllegalArgumentException("Unknown expression");
+ */
 
 fun todoTask8(expr: Expr): Nothing = TODO(
     """

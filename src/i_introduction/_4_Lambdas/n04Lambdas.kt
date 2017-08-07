@@ -11,14 +11,10 @@ fun example() {
     sum(1, square(2)) == 5
 }
 
-fun todoTask4(collection: Collection<Int>): Nothing = TODO(
-    """
-        Task 4.
-        Rewrite 'JavaCode4.task4()' in Kotlin using lambdas.
-        You can find the appropriate function to call on 'Collection' by using code completion.
-        Don't use the class 'Iterables'.
-    """,
-    documentation = doc4(),
-    references = { JavaCode4().task4(collection) })
+fun todoTask4(collection: Collection<Int>): Boolean {
+    val any42: (Int) -> Boolean = {x: Int -> x%42 == 0}
+
+    return collection.find(any42)!=null
+}
 
 fun task4(collection: Collection<Int>): Boolean = todoTask4(collection)
