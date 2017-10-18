@@ -35,7 +35,9 @@ fun List<String>.partitionWordsAndLines(): Pair<List<String>, List<String>> {
     return partitionTo(ArrayList<String>(), ArrayList()) { s -> !s.contains(" ") }
 }
 
+private val letters = (('a'..'z') + ('A'..'Z'))
+
 fun Set<Char>.partitionLettersAndOtherSymbols(): Pair<Set<Char>, Set<Char>> {
 //    task41()
-    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z'}
+    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in letters }
 }
